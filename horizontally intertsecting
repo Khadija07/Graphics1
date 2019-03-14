@@ -1,0 +1,62 @@
+#include<bits/stdc++.h>
+#include<graphics.h>
+#include<conio.h>
+using namespace std;
+int main()
+{
+
+    int xmin, ymin, xmax, ymax, x1, y1, x2, y2, code1, code2;
+    int gd = DETECT, gm;
+    initgraph(&gd,&gm," ");
+    outtext("graphics");
+    xmin = 100;
+    ymin = 100;
+    xmax = 400;
+    ymax = 400;
+    rectangle(xmin,ymin,xmax,ymax);
+    cout<<"coordinates of A:";
+    while(cin>>x1>>y1)
+    {
+        cout<<"coordinates of B:";
+        cin>>x2>>y2;
+        line(x1,y1,x2,y2);
+        if(((x1<xmax && x2>xmax) || (x2<xmax && x1>xmax) || (x1<xmin && x2>xmin) || (x2<xmin && x1>xmin)) && ((y1>ymin && y1<ymax) || (y2>ymin && y2<ymax)))
+        {
+        if(x1<xmin && x2>xmin && ((y1+y2)/2)==y1)
+        {
+            cout<<"h intersected"<<endl;
+        }
+        else if(x1>xmin && x2<xmin && ((y1+y2)/2)==y1)
+        {
+            cout<<"h intersected"<<endl;
+        }
+        else if(x1>xmax && x2<xmax && ((y1+y2)/2)==y1)
+        {
+            cout<<"h intersected"<<endl;
+        }
+        else if(x1<xmax && x2>xmax && ((y1+y2)/2)==y1)
+        {
+            cout<<"h intersected"<<endl;
+        }
+        else
+        {
+            cout<<"not h intersected"<<endl;
+        }
+
+        }
+        else
+        {
+            cout<<"not intersected"<<endl;
+        }
+
+    }
+
+    getch();
+    closegraph();
+    return 0;
+
+
+}
+
+
+
