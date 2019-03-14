@@ -1,0 +1,108 @@
+#include<bits/stdc++.h>
+#include<graphics.h>
+#include<conio.h>
+using namespace std;
+int main()
+{
+
+    int xmin, ymin, xmax, ymax, x1, y1, x2, y2, code1, code2;
+    int gd = DETECT, gm;
+    initgraph(&gd,&gm," ");
+    outtext("graphics");
+    xmin = 100;
+    ymin = 100;
+    xmax = 400;
+    ymax = 400;
+    rectangle(xmin,ymin,xmax,ymax);
+    cout<<"coordinates of A:";
+    while(cin>>x1>>y1)
+    {
+        cout<<"coordinates of B:";
+        cin>>x2>>y2;
+        line(x1,y1,x2,y2);
+        printf("the region code of A:\n");
+        if(x1>xmin && x1<xmax && y1<ymin)
+        {
+            cout<<"0100"<<endl;
+        }
+         else if(x1>xmax && y1>ymin && y1<ymax)
+        {
+            cout<<"0010"<<endl;
+        }
+        else if(x1<xmin && y1>ymin && y1<ymax)
+        {
+            cout<<"0001"<<endl;
+
+        }
+        else if(x1>xmin && x1<xmax && y1>ymax)
+        {
+            cout<<"1000"<<endl;
+        }
+        else if(x1>xmax && y1>ymax)
+        {
+            cout<<"1010"<<endl;
+        }
+        else if(x1>xmax && y1<ymin)
+        {
+            cout<<"0110"<<endl;
+        }
+        else if(x1<xmin && y1>ymax)
+        {
+            cout<<"1001"<<endl;
+        }
+        else if(x1<xmin && y1<ymin)
+        {
+            cout<<"0101"<<endl;
+        }
+        else
+        {
+            cout<<"0000"<<endl;
+        }
+         printf("the region code of B:\n");
+        if(x2>xmin && x2<xmax && y2<ymin)
+        {
+            cout<<"0100"<<endl;
+        }
+         else if(x2>xmax && y2>ymin && y2<ymax)
+        {
+            cout<<"0010"<<endl;
+        }
+        else if(x2<xmin && y2>ymin && y2<ymax)
+        {
+            cout<<"0001"<<endl;
+
+        }
+        else if(x2>xmin && x2<xmax && y2>ymax)
+        {
+            cout<<"1000"<<endl;
+        }
+        else if(x2>xmax && y2>ymax)
+        {
+            cout<<"1010"<<endl;
+        }
+        else if(x2>xmax && y2<ymin)
+        {
+            cout<<"0110"<<endl;
+        }
+        else if(x2<xmin && y2>ymax)
+        {
+            cout<<"1001"<<endl;
+        }
+        else if(x2<xmin && y2<ymin)
+        {
+            cout<<"0101"<<endl;
+        }
+        else
+        {
+            cout<<"0000"<<endl;
+        }
+
+    }
+
+    getch();
+    closegraph();
+    return 0;
+
+
+}
+
