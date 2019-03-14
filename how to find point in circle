@@ -1,0 +1,34 @@
+#include<bits/stdc++.h>
+#include<graphics.h>
+using namespace std;
+
+int main()
+{
+    int gd=DETECT, gm, x, y, r;
+    double x1, y1, X, Y, R, P;
+	initgraph(&gd, &gm, "");
+
+	x = 200;
+	y = 200;
+	r = 100;
+	circle(x,y,r);
+	while(cin>>x1>>y1)
+    {
+        X = x1 - x;
+        Y = y1 - y;
+        R = pow(X,2) + pow(Y,2);
+        //cout<<"R:"<<R<<endl;
+        P = pow(r,2);
+        if(R<=P)
+        {
+            cout<<"inside"<<endl;
+        }
+        else
+        {
+            cout<<"outside"<<endl;
+        }
+    }
+	getch();
+	closegraph();
+
+}
