@@ -1,0 +1,57 @@
+#include<bits/stdc++.h>
+#include<graphics.h>
+#include<conio.h>
+using namespace std;
+int main()
+{
+
+    int xmin, ymin, xmax, ymax, x1, y1, x2, y2, code1, code2;
+    int gd = DETECT, gm;
+    initgraph(&gd,&gm," ");
+    outtext("graphics");
+    xmin = 100;
+    ymin = 100;
+    xmax = 400;
+    ymax = 400;
+    rectangle(xmin,ymin,xmax,ymax);
+    cout<<"coordinates of A:";
+    while(cin>>x1>>y1)
+    {
+        cout<<"coordinates of B:";
+        cin>>x2>>y2;
+        line(x1,y1,x2,y2);
+        if((x1<=xmax && x1>=xmin) || (x2<=xmax && x2>=xmin))
+        {
+        if(y1<ymax && y2>ymax && ((x1+x2)/2)==x1)
+        {
+            cout<<"vertically intersected"<<endl;
+        }
+        else if(y1>ymax && y2<ymax && ((x1+x2)/2)==x1)
+        {
+            cout<<"vertically intersected"<<endl;
+        }
+        else if(y1>ymin && y1<ymax && y2<ymin && ((x1+x2)/2)==x1)
+        {
+            cout<<"vertically intersected"<<endl;
+        }
+        else if(y1<ymin && y2>ymin && y2<ymax && ((x1+x2)/2)==x1)
+        {
+            cout<<"vertically intersected"<<endl;
+        }
+        else
+        {
+            cout<<"not vertically intersected"<<endl;
+        }
+
+        }
+
+    }
+
+    getch();
+    closegraph();
+    return 0;
+
+
+}
+
+
